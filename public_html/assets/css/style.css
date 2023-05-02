@@ -1,0 +1,445 @@
+:root {
+    /*Fonts*/
+    --primary-title-font: 900 4em 'Noto Sans Display', sans-serif;
+    --secondary-title-font: italic 100 1.9em 'Noto Sans Display', sans-serif;
+    
+    /*Structure*/
+    --content-width: 350px;
+    --group-width: 300px;
+    --item-y-spacing: 25px;
+    --item-x-spacing: 10px;
+    --main-radius: 25px;
+    
+    /*Animation*/
+    --vingt-cent: cubic-bezier(0.1, 0.8, 0, 1);
+    --cent-cent: cubic-bezier(1,0,0,1);
+    --zero-cent: cubic-bezier(0,1,0,1);
+
+    /*Colors*/
+    --bg-color: #3b5991;
+    --light-blue: cornflowerblue;
+    --dark-blue: rgb(29, 50, 88);
+    --accent: salmon;
+    --light: white;
+}
+
+* {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 0px;
+}
+
+a, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: var(--light);
+}
+
+body {
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+h2, h4 {
+    color: var(--light);
+}
+
+/*-- header ---------------------------------*/
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: auto;
+    max-width: var(--content-width);
+    
+    color: var(--light);
+}
+
+.main-title {
+    width: var(--content-width);
+}
+
+.main-title h1 {
+    margin: 10px auto 0px auto;
+    font: var(--primary-title-font);
+    font-variation-settings: 'wdth' 25;
+}
+.main-title h4 {
+    margin: 0px auto 10px auto;
+}
+
+/*top-buttons ---------------------------------*/
+
+.top-buttons ul a .top-button-item h2 {
+    margin: 0px;
+    transition: .5s var(--vingt-cent);
+    scale: 100%;
+}
+
+.top-buttons ul a:hover .top-button-item h2 {
+    scale: 150%;
+    transition: 1s var(--vingt-cent);
+    rotate: -90deg;
+}
+
+.top-buttons {
+    margin: var(--item-y-spacing) 0 0 0;
+    width: var(--content-width);
+}
+
+.top-buttons ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0px;
+}
+
+.top-buttons ul a .top-button-item,
+.top-buttons ul li a.top-button-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+
+    background: var(--dark-blue);
+    scale: 100%;
+    transition: .5s var(--vingt-cent);
+    border: 0px solid transparent;
+    border-radius: var(--main-radius);
+    outline: 5px solid transparent;
+    outline-offset: 2px;
+
+    width: calc(var(--content-width) / 5 - 4px);
+    aspect-ratio: 1 / 1;
+}
+
+.top-buttons ul a:hover .top-button-item,
+.top-buttons ul li:hover a.top-button-item {
+    background: linear-gradient(45deg, var(--accent) 0%, var(--light-blue) 100%);
+    
+    transition: 1s var(--vingt-cent);
+    
+    rotate: 90deg;
+    border-radius: 50%;
+    scale: 80%;
+    outline: 2px solid var(--accent);
+    outline-offset: 10px;
+    border: 4px solid var(--light);
+
+    cursor: pointer;
+}
+
+.top-buttons ul a:active .top-button-item,
+.top-buttons ul li:active a.top-button-item,
+.top-buttons ul a:focus .top-button-item,
+.top-buttons ul li:focus a.top-button-item {
+    scale: 65%;
+}
+
+.fa {
+    color: var(--light);
+}
+
+/*whole block design + hover ---------------------------------*/
+
+.linktree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.group-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group-item li a h2 {
+    font: var(--secondary-title-font);
+    font-size: 1.6em;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.group-item li {
+    list-style-type: none;
+    
+    background: var(--dark-blue);
+    scale: 100%;
+    transition: .5s var(--vingt-cent);
+    border: 0px solid transparent;
+    border-radius: var(--main-radius);
+    
+    margin: calc(var(--item-y-spacing) * .2) 0px;
+    padding: 0px 50px;
+    
+    width: var(--group-width);
+}
+
+.group-item:hover li {
+    background: linear-gradient(45deg, var(--accent) 0%, var(--light-blue) 100%);
+    
+    transition: 1s var(--vingt-cent);
+    
+    scale: 105%;
+    border: 4px solid var(--light);
+}
+
+.group-item:active li,
+.group-item:focus li {
+    scale: 85%;
+}
+
+/* group projects frame ---------------------------- */
+
+.group-projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid var(--light);
+    border-radius: var(--main-radius);
+    width: var(--content-width);
+    margin: 30px 0 0 0;
+    
+    transition: .5s var(--vingt-cent);
+}
+
+.group-projects:hover {
+    border: 5px solid var(--accent);
+}
+
+.group-projects .group-title {
+    color: var(--light);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: -17px;
+    left: 50%;
+    background-color: var(--bg-color);
+    white-space: nowrap;
+}
+
+.group-projects .group-title::before,
+.group-projects .group-title::after {
+    display: inline-block;
+    content: "";
+    width: 10px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--light);
+    border-radius: 50%;
+    vertical-align: middle;
+    transition: .5s var(--vingt-cent);
+}
+.group-projects:hover .group-title::before,
+.group-projects:hover .group-title::after {
+    width: 20px;
+    background-color: var(--accent);
+}
+
+.group-projects .group-title::before {
+    margin: 0 10px 0 0;
+}
+
+.group-projects .group-title::after {
+    margin: 0 0 0 10px;
+}
+
+/*hover round shapes - translate out --------------*/
+
+.circle-hover-translate-out::before,
+.circle-hover-translate-out::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-radius: 25px;
+    background: var(--accent);
+    transition: .5s var(--vingt-cent);
+}
+
+.circle-hover-translate-out:hover::before,
+.circle-hover-translate-out:hover::after {
+    transition: 1s var(--vingt-cent);
+    width: 50px;
+    height: 50px;
+}
+.circle-hover-translate-out:hover::before {
+    translate: -40px 0px;
+}
+.circle-hover-translate-out:hover::after {
+    translate: 40px 0px;
+}
+
+.circle-hover-translate-out:active::before,
+.circle-hover-translate-out:active::after,
+.circle-hover-translate-out:focus::before,
+.circle-hover-translate-out:focus::after {
+    width: 10px;
+    height: 10px;
+}
+.circle-hover-translate-out:active::before,
+.circle-hover-translate-out:focus::before {
+    translate: -80px 0px;
+}
+.circle-hover-translate-out:active::after,
+.circle-hover-translate-out:focus::after {
+    translate: 80px 0px;
+}
+
+/*hover round shapes - translate down --------------*/
+
+.circle-hover-translate-down::before,
+.circle-hover-translate-down::after {
+    display: block;
+    content: "";
+    width: 0px;
+    aspect-ratio: 1 / 1;
+    border-radius: 25px;
+    background: var(--light);
+    transition: .5s var(--vingt-cent);
+}
+
+.circle-hover-translate-down:hover::before,
+.circle-hover-translate-down:hover::after {
+    transition: 1s var(--vingt-cent);
+    width: calc((var(--content-width) - var(--group-width))/2 - 5px);
+}
+
+.circle-hover-translate-down:active::before,
+.circle-hover-translate-down:active::after,
+.circle-hover-translate-down:focus::before,
+.circle-hover-translate-down:focus::after {
+    width: 10px;
+}
+.circle-hover-translate-down:active::before,
+.circle-hover-translate-down:focus::before {
+    translate: -20px 0px;
+}
+.circle-hover-translate-down:active::after,
+.circle-hover-translate-down:focus::after {
+    translate: 20px 0px;
+}
+
+/*var(--light) line under h2 ---------------------------------*/
+
+.linktreeItem li a h2:after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 0px;
+    border-radius: 50%;
+    transform: scaleX(0%);
+    opacity: 0%;
+    
+    background-color: var(--light);
+    
+    transform-origin: center;
+    transition: .5s var(--vingt-cent);
+}
+
+.linktreeItem:hover li a h2:after {
+    transition: 1s var(--vingt-cent);
+    opacity: 100%;
+    transform: scaleX(100%);
+    height: 1px;
+    border-radius: 0%;
+}
+
+/*dropdown after p--------------------*/
+
+.dropdown p {
+    color: var(--light);
+}
+
+.dropdown p:after {
+    display: block;
+    content: "...";
+    opacity: 0%;
+    transition: .5s var(--vingt-cent) 0s;
+    transform: translateY(80%);
+    height: 0px;
+}
+
+.dropdown:hover p:after {
+    content: "";
+    opacity: 100%;
+    transform: translateY(0%);
+    height: 80px;
+    transition: 1s var(--vingt-cent) 1s;
+}
+
+.developer:hover p:after {
+    content: "Everything I've done, that is remotely presentable as new developer";
+}
+.motion-designer:hover p:after {
+    content: "All my work as a motion designer. Showreel, gifs, links and much more";
+}
+.bamsystem:hover p:after {
+    content: "First static PHP website done in 1 week after 2 weeks studying web development.";
+}
+.qimono:hover p:after {
+    content: "Duo with Augusta Sarlin, my partner. Qimono focuses on creative animation";
+}
+.motiontober:hover p:after {
+    content: "Motion design challenge created with Qimono on Instagram";
+}
+
+/* walk gif -------------------------------------------------*/
+
+.linktree .front-walker {
+    max-width: 150px;
+    margin: var(--item-y-spacing) 0 0 0;
+}
+
+/* 404 --------------------------------------------*/
+
+.not-found-content {
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.not-found-content h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.not-found-content h1,
+.not-found-content img {
+    margin: 30px 0;
+}
+
+.not-found-content a {
+    font-size: 3em;
+    border-radius: 150px;
+    padding: 30px;
+    border: 0px solid white;
+    transition: 1s var(--zero-cent);
+    transform-origin: center;
+    margin: 10px 0;
+}
+
+.not-found-content a:hover {
+    background: linear-gradient(45deg, var(--accent) 0%, var(--light-blue) 100%);
+    border: 20px solid white;
+}
+
+.not-found-content a:active,
+.not-found-content a:focus {
+    transform: scale(50%);
+}
+
+.not-found-content img {
+    max-width: 360px;
+}
