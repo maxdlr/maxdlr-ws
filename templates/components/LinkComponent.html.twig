@@ -1,0 +1,14 @@
+<div{{ attributes.defaults(stimulus_controller('link')) }} class="link-component">
+
+    {#    https://symfony.com/bundles/ux-twig-component/current/index.html#component-attributes #}
+    <div class="bg-grad-prim-accent mb-2 rounded-4 px-3 py-2">
+        <h2 class="link-title-font ps-2 fs-1 text-light">
+            <i class="bi bi-arrow-right"></i>
+            {{ title }}
+        </h2>
+
+        <div class="text-font d-none">
+            {{ description }}
+        </div>
+    </div>
+</div>

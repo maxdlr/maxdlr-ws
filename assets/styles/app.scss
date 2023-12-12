@@ -1,0 +1,84 @@
+$primary: #3b5991;
+$secondary: cornflowerblue;
+$dark: rgb(29, 50, 88);
+$accent: salmon;
+$light: white;
+
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=Noto+Sans+JP&display=swap');
+
+body {
+  background-color: $primary;
+}
+
+.group-title-font {
+  font-family: 'Bebas Neue', sans-serif;
+
+  @include media-breakpoint-up(md) {
+    max-width: 100%;
+  }
+}
+
+.link-title-font {
+  font-family: 'DM Serif Display', serif;
+}
+
+.text-font {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.bg-grad-prim-accent {
+  background: linear-gradient(45deg, $secondary, $accent);
+}
+
+.group-title-font-size {
+  font-size: $h1-font-size*1.5;
+}
+
+.text-bg-grad {
+  background: -webkit-linear-gradient(
+                  45deg,
+                  $light 10%,
+                  $dark 20%,
+                  $accent 30%,
+                  $accent 40%,
+                  $primary 47%,
+                  $light 50%,
+                  $dark 53%,
+                  $accent 55%,
+                  $light 58%,
+                  $dark 60%,
+                  $light 82%,
+                  $primary 85%,
+                  $light 86%,
+                  $accent 88%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.h-20px {
+  height: 20px;
+}
+
+.link-component {
+  width: clamp(360px, 50vw, 550px);
+}
+
+$pushDownValue: 40px;
+
+.pushdown {
+  padding-top: $pushDownValue;
+  margin-top: $pushDownValue;
+}
+
+.group-title {
+  &:before, &:after {
+    display: block;
+    content: '';
+    width: 10px;
+    aspect-ratio: 1/1;
+    background-color: $light;
+  }
+}

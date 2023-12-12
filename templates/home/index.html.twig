@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <main
+            class="d-flex justify-content-center align-items-center flex-column container mt-4"
+    >
+
+        {{ component('GroupComponent', {
+            projects: devProjects,
+            title: 'Dev Projects'
+        }) }}
+
+        {{ component('GroupComponent', {
+            projects: motionProjects,
+            title: 'Motion Projects'
+        }) }}
+
+    </main>
+
+{% endblock %}
