@@ -4,12 +4,14 @@ $dark: rgb(29, 50, 88);
 $accent: salmon;
 $light: white;
 
+$font-size-base: 2rem;
+
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons";
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=Noto+Sans+JP&display=swap');
 
 body {
-  background-color: $primary;
+  background-color: $dark;
 }
 
 .group-title-font {
@@ -26,29 +28,31 @@ body {
 
 .text-font {
   font-family: 'Noto Sans JP', sans-serif;
+  font-size: $h6-font-size * 0.5;
 }
 
 .bg-grad-prim-accent {
   background: linear-gradient(45deg, $secondary, $accent);
 }
 
-.group-title-font-size {
-  font-size: $h1-font-size*1.5;
+.bg-accent {
+  background-color: $accent;
 }
+
+//.group-title-font-size {
+//  font-size: $h1-font-size*1.5;
+//}
 
 .text-bg-grad {
   background: -webkit-linear-gradient(
                   45deg,
                   $light 10%,
-                  $dark 20%,
                   $accent 30%,
                   $accent 40%,
                   $primary 47%,
                   $light 50%,
-                  $dark 53%,
                   $accent 55%,
                   $light 58%,
-                  $dark 60%,
                   $light 82%,
                   $primary 85%,
                   $light 86%,
@@ -62,8 +66,16 @@ body {
   height: 20px;
 }
 
+.h-2px {
+  height: 2px;
+}
+
+.h-1px {
+  height: 1px;
+}
+
 .link-component {
-  width: clamp(360px, 50vw, 550px);
+  width: clamp(300px, 50vw, 550px);
 }
 
 $pushDownValue: 40px;
@@ -74,11 +86,38 @@ $pushDownValue: 40px;
 }
 
 .group-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+
+  }
+
   &:before, &:after {
     display: block;
     content: '';
     width: 10px;
     aspect-ratio: 1/1;
     background-color: $light;
+    border-radius: 50%;
   }
 }
+
+.description {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+
+  &:hover {
+    grid-template-rows: 0fr;
+    //background-color: #0c121d;
+    overflow: hidden;
+  }
+
+  //transition: grid-template-rows .5s cubic-bezier(0.2, 0, 0, 1);
+}
+
+// animation / ---------------------------------------------------------
+
+/* https://www.animotion.dev */

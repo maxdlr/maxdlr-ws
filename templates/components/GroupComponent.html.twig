@@ -1,16 +1,16 @@
 <div{{ attributes }}
         class="mb-4"
 >
-    <div class="position-relative border border-1 pushdown px-2 pb-2 rounded-4">
+    <div class="position-relative border border-1 pushdown px-2 pb-4 rounded-4">
         <div class="position-absolute top-0 translate-middle start-50">
-            <div class="position-relative bg-primary px-3 group-title">
-                <h1 class="group-title-font group-title-font-size fw-bold text-bg-grad text-nowrap m-0 p-0 text-center">
+            <div class="position-relative bg-dark mx-3 group-title">
+                <h1 class="group-title-font fs-1 fw-bold text-bg-grad text-nowrap mx-3 p-0 text-center">
                     {{ title }}
                 </h1>
-                <div class="behind-line d-block w-100 bg-secondary h-20px position-absolute translate-middle top-50 start-50 z-n1 align-middle"></div>
+                {#                <div class="behind-line d-block w-100 bg-secondary h-20px position-absolute translate-middle top-50 start-50 z-n1 align-middle"></div> #}
             </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center flex-column">
+        <div class="d-flex justify-content-center align-items-center flex-column px-3">
             {% for project in projects %}
                 {{ component('LinkComponent', {
                     title: project.title.value,
