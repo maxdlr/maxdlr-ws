@@ -40,6 +40,18 @@
             "tests/bootstrap.php"
         ]
     },
+    "symfony/apache-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "0f18b4decdf5695d692c1d0dfd65516a07a6adf1"
+        },
+        "files": [
+            "public/.htaccess"
+        ]
+    },
     "symfony/console": {
         "version": "7.0",
         "recipe": {
@@ -167,6 +179,15 @@
             "tests/bootstrap.php"
         ]
     },
+    "symfony/requirements-checker": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.0",
+            "ref": "02c6e4b9b117c39e8a23eab7f3840ef6e62293b9"
+        }
+    },
     "symfony/routing": {
         "version": "7.0",
         "recipe": {
@@ -270,18 +291,18 @@
             "config/routes/web_profiler.yaml"
         ]
     },
-         "symfony/webapp-pack": {
-             "version": "1.2",
-             "recipe": {
-                 "repo": "github.com/symfony/recipes",
-                 "branch": "main",
-                 "version": "1.0",
-                 "ref": "aece95c8a188f6e6d04f01ccb8678d1764fd2642"
-             },
-             "files": [
-                 "./config/packages/messenger.yaml"
-             ]
-         },
+    "symfony/webapp-pack": {
+        "version": "1.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "aece95c8a188f6e6d04f01ccb8678d1764fd2642"
+        },
+        "files": [
+            "./config/packages/messenger.yaml"
+        ]
+    },
     "symfony/webpack-encore-bundle": {
         "version": "2.1",
         "recipe": {
